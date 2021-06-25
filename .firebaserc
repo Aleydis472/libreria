@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "libreriaangular": {
+      "hosting": {
+        "CRUDlibreria": [
+          "libreriaangular"
+        ]
+      }
+    },
+    "books-69487": {
+      "hosting": {
+        "CRUDlibreria": [
+          "books-69487"
+        ]
+      }
+    }
+  }
+}

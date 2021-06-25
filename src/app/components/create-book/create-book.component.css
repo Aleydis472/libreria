@@ -1,0 +1,31 @@
+
+.card{
+    position: relative;
+	z-index: 1;
+	padding: 57px 10px;
+	margin-top: 10%;
+    border-radius: 10px;
+    -webkit-box-shadow:0px 1px 1px #000000;
+    -moz-box-shadow:0px 1px 1px #000000;
+    box-shadow: 4px 14px 40px -11px rgba(0,0,0,0.95);
+    border-bottom: solid 1px #8CBFDC;
+    border-right: solid 1px #8CBFDC;
+    margin-bottom: 20%;
+   
+}
+
+h3{
+    color: #5C636A;
+    font-weight: bold;
+}
+.agg{
+    background-color: #8CBFDC;
+    color: white;
+} 
+
+.book-circle {
+	position: relative;
+	top: 60px;
+	color: #8CBFDC;
+	z-index: 2;	
+}

@@ -1,0 +1,105 @@
+<div class="list mt-5">
+  <div class="car">
+    <div class="container">
+      <div class="title mt-5">
+        <h3> Lista de Libros</h3>
+      </div>
+      <button class="btn agg btn-lg float-end mt-1" routerLink="/create-book">Agregar</button>
+      <h2 *ngIf="books.length === 0" class="badge bg-danger">No hay datos para mostrar!</h2>
+      <div class="row">
+        <div class="col mt-4">
+          <h5>Editoriales:</h5>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="radio" name="check" id="check1" value="1"
+              (change)="getBooksAcantilado()">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Acantilado</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="radio" name="check" id="check2" value="1" (change)="getBooksSatori()">
+            <label class="form-check-label" for="flexSwitchCheckChecked">Satori</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="radio" name="check" id="check3" value="1"
+              (change)="getBooksPlaneta()">
+            <label class="form-check-label" for="flexSwitchCheckDisabled">Planeta</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="radio" name="check" id="check" value="1" (change)="getBooks()"
+              checked>
+            <label class="form-check-label" for="flexSwitchCheckDisabled">Todo</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--<div class="row"> 
+        <h3>listar por:</h3>
+        <div class="col">
+          <button (click)="getBooksPlaneta()">Acantilado</button>
+        </div> 
+        <div class="col">
+          <button>Planeta</button>
+        </div>-->
+
+
+
+
+
+    <div class="table-responsive-xl tabla ">
+      <table class="table table-striped mt-5 text-center vertical-align: middle">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Libro</th>
+            <th>Autor</th>
+            <th>Editorial</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books | paginate:{itemsPerPage: 6, currentPage: pageActual}; let i=index">
+            <th>{{i+1}}</th>
+            <td>{{book.nombre | uppercase}}</td>
+            <td>{{book.autor | titlecase}}</td>
+            <td>{{book.editorial}}</td>
+            <td><i [routerLink]="['/detail-book/', book.id]"
+                class="fas fa-eye text-primary mx-2"> </i>
+              <i class="fas fa-edit fa-lg text-info mx-2"></i>
+              <i (click)="deletedBook(book.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="pageActual = $event" style="background-color: #db504b;">
+      </pagination-controls>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Button trigger modal 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>

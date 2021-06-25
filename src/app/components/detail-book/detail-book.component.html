@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row vh-100 justify-content-around align-items-center" >
+        <div class="col">
+            <div class="card mb-3 card-width">
+                <div class="row g-0">
+                  <div class="col-md-4 embed-responsive embed-responsive-16by9">
+                    <img src="../../../assets/img/books-918521_1920.jpg"  class="card-img embed-responsive-item" alt="">
+                  </div>
+                  <div class="col-md-8"> 
+                      <div class="card-header">
+                          <h5 class="card-title mt-2">{{Book.nombre | uppercase}}</h5>
+                      </div>
+                    <div class="card-body">
+                      <p class="card-text"><span class="font-weight-bold">ISVN: </span>{{Book.id}}</p>
+                      <p class="card-text"><span class="font-weight-bold">AUTOR: </span>{{Book.autor | titlecase}}</p>
+                      <p class="card-text"><span class="font-weight-bold">EDITORIAL: </span>{{Book.editorial}}</p>
+                      <p class="card-text"><span class="font-weight-bold">PASTA: </span>{{Book.pasta}}</p>
+                      <p class="card-text"><span class="font-weight-bold">PAGINAS: </span>{{Book.nPaginas}}</p>
+                      <p class="card-text"><small class="text-muted">{{jstoday }}</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
